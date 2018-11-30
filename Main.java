@@ -45,7 +45,8 @@ public class Main {
                 break;
 
             case 7: // Get median
-
+            	
+            	GetMedian(arr);
                 break;
 
             case 8: // Shuffle
@@ -90,6 +91,7 @@ public class Main {
 
             case 18: //execute all
             	CheckPalindrome(arr);
+            	GetMedian(arr);
                 break;
         }
 
@@ -136,5 +138,20 @@ public class Main {
 	    else  
 	        System.out.println("Entered string isn't a palindrome.");   
     }  
-
+    public static void GetMedian(String arr[])
+    {
+    	Arrays.sort(arr);
+		int size=arr.length-1;
+		int median=0;
+		if(arr.length%2!=0)
+		{
+			median=Integer.valueOf(arr[(size+1)/2]);
+		}
+		else
+		{
+			int m1=Integer.valueOf(arr[(size/2)+1]);
+			int m2=Integer.valueOf(arr[size/2]);
+			median=(m1+m2)/2;
+		}
+		System.out.println("Median = " + median);
 }
