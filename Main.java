@@ -154,4 +154,5 @@ public class Main {
 			median=(m1+m2)/2;
 		}
 		System.out.println("Median = " + median);
+    }
 }
