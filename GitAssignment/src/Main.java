@@ -95,7 +95,7 @@ public class Main {
                 break;
 
             case 16: // Shift Array
-
+                ShiftArray(intArr);
                 break;
 
             case 17: // Get Average
@@ -332,8 +332,27 @@ public class Main {
 		}
 		
 	}
-	
 
+    /***
+     * @ID 20160047
+     * @Name Usama Fouad Eltmsah
+     * @param the original arrayList
+     * @return arrayList shifted 1 time to left
+     ***/
+    public ArrayList<Integer> ShiftArray(ArrayList<Integer> arr)
+    {
+        int n = arr.size();
+        ArrayList<Integer> tmpArr = new ArrayList();
 
+        int tmpInt = arr.get(0);
+        int arrSize = arr.size();
+        for (int i = 1; i < arrSize; i++)
+        {
+            tmpArr.add(i - 1, arr.get(i));
+        }
+        tmpArr.add(arrSize - 1, tmpInt);
+
+        return tmpArr;
+    }
 
 }
