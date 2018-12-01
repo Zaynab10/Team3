@@ -33,6 +33,8 @@ public class Main {
         switch (choice){
             case 1: // Reverse Array
 		reverse(intArr);
+		System.out.println(intArr);
+
             	break;
 
             case 2: // Check palindrome
@@ -79,7 +81,7 @@ public class Main {
                 break;
 
             case 12: // Zero if less than zero
-
+		Replace_by_Zero(intArr);
                 break;
 
             case 13: // Count primes
@@ -104,8 +106,10 @@ public class Main {
 
             case 18: //execute all
 			reverse(intArr);
+			System.out.println(intArr);
             	CheckPalindrome(stringArr);
             	GetMedian(intArr);
+		Replace_by_Zero(intArr);
             	System.out.println("prime array : " + returnOnlyPrime(intArr));
             	find_Smallest_Prime(intArr);
                 most_Repeated_Value(convertIntegers(intArr));
@@ -334,6 +338,7 @@ public class Main {
 		
 	}
 
+
 	static void reverse (ArrayList <Integer> arr){
         Collections.reverse(arr);
         for(int i = 0 ; i < arr.size() ; i++ ){
@@ -345,7 +350,6 @@ public class Main {
     /***
      * @ID 20160047
      * @Name Usama Fouad Eltmsah
-     * @param the original arrayList
      * @return arrayList shifted 1 time to left
      ***/
     public static ArrayList<Integer> ShiftArray(ArrayList<Integer> arr)
@@ -362,5 +366,27 @@ public class Main {
         tmpArr.add(arrSize - 1, tmpInt);
         return tmpArr;
     }
-
+  
+	static void reverse ( ArrayList arr){
+        ArrayList arr2 = new ArrayList<>();
+        for(int i = 0 ; i < arr.size() ; i++ )
+            arr2.add(arr.get(i));
+        for(int i = 1 ; i <= arr.size() ; i++ )
+            arr.set(i-1, (int) arr2.get(arr.size()-i));
+    }
+	
+	public static void Replace_by_Zero(ArrayList<Integer> objArray)
+    {
+        System.out.println("Array after removing negative element");
+      for(int i=0;i<objArray.size();i++)
+      {
+          if(objArray.get(i)<0)
+          {
+              objArray.set(i, 0);
+          }
+      }
+    System.out.println(objArray);
+        
+    }
+	
 }
