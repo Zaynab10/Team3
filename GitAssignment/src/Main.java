@@ -360,7 +360,7 @@ public class Main {
             tmpArr.add(i - 1, arr.get(i));
         }
         tmpArr.add(arrSize - 1, tmpInt);
-
+	System.out.println(tmpArr);
         return tmpArr;
     }
 
