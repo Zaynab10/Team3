@@ -348,7 +348,7 @@ public class Main {
      * @param the original arrayList
      * @return arrayList shifted 1 time to left
      ***/
-    public ArrayList<Integer> ShiftArray(ArrayList<Integer> arr)
+    public static ArrayList<Integer> ShiftArray(ArrayList<Integer> arr)
     {
         int n = arr.size();
         ArrayList<Integer> tmpArr = new ArrayList();
