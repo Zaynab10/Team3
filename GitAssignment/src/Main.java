@@ -32,7 +32,7 @@ public class Main {
         sc.close();
         switch (choice){
             case 1: // Reverse Array
-	reverse(arr);
+		reverse(intArr);
                 break;
 
             case 2: // Check palindrome
@@ -103,7 +103,7 @@ public class Main {
                 break;
 
             case 18: //execute all
-		reverse(arr);
+		reverse(intArr);
             	CheckPalindrome(stringArr);
             	GetMedian(intArr);
             	returnOnlyPrime(intArr);
@@ -334,14 +334,11 @@ public class Main {
 		}
 		
 	}
-	static void reverse (int []arr){
+	static void reverse ( ArrayList arr){
         ArrayList arr2 = new ArrayList<>();
-        for(int i = 0 ; i < arr.length ; i++ )
-            arr2.add(arr[i]);
-        for(int i = 1 ; i <= arr.length ; i++ )
-            arr[i-1] = (int) arr2.get(arr.length-i);
+        for(int i = 0 ; i < arr.size() ; i++ )
+            arr2.add(arr.get(i));
+        for(int i = 1 ; i <= arr.size() ; i++ )
+            arr.set(i-1, (int) arr2.get(arr.size()-i));
     }
-
-
-
 }
