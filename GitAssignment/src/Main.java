@@ -38,7 +38,8 @@ public class Main {
                 break;
 
             case 3: // Sort
-
+			   Check_Sorted(intArr,siz);
+            
                 break;
 
             case 4: // Check Sorted
@@ -102,6 +103,8 @@ public class Main {
             	GetMedian(intArr);
             	returnOnlyPrime(intArr);
             	find_Smallest_Prime(intArr);
+				Check_Sorted(intArr,siz);
+              
                 break;
         }
 
@@ -239,6 +242,16 @@ public class Main {
 	    }
 	
 	
+		/*20160065*/
+    public static boolean Check_Sorted(ArrayList<Integer> Arr,int siz){
+
+        for(int i=0;i<siz-1;i++)
+        {
+		if(Arr.get(i)> Arr.get(i + 1)) {System.out.println("Array is not sorted."); return false;}
+        }
+		System.out.println("Array is sorted.");
+        return true;
+    }
 	
 
 
