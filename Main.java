@@ -1,5 +1,4 @@
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -12,21 +11,20 @@ public class Main {
     public static void main(String[] args) {
         System.out.print("Enter characters array size: ");
         Scanner sc = new Scanner(System.in);
-        int siz = sc.nextInt();
-        stringArr = new String[siz];
-        	
+        int siz = sc.nextInt();stringArr = new String[siz];
+
         System.out.println("Enter characters array elements:");
-        	for(int i=0;i<siz;i++)
-        		stringArr[i] = sc.next();
+        for(int i=0;i<siz;i++)
+            stringArr[i] = sc.next();
 
-        	
+
         System.out.print("Enter integers array size: ");
-        siz = sc.nextInt();        
+        siz = sc.nextInt();
         System.out.println("Enter integers array elements:");
-        	for(int i=0;i<siz;i++)
-        		intArr.add(sc.nextInt());
+        for(int i=0;i<siz;i++)
+            intArr.add(sc.nextInt());
 
-    	
+
         printMenu();
         int choice = sc.nextInt();
         sc.close();
@@ -36,7 +34,7 @@ public class Main {
                 break;
 
             case 2: // Check palindrome
-            	CheckPalindrome(stringArr);
+                CheckPalindrome(stringArr);
                 break;
 
             case 3: // Sort
@@ -44,12 +42,15 @@ public class Main {
                 break;
 
             case 4: // Check Sorted
-
+                boolean b= Check_Sorted(intArr,siz);
+                if(b) System.out.println("Array is sorted.");
+                else System.out.println("Array is not sorted.");
+				
                 break;
 
             case 5: // Get the maximum 3 numbers
-                
-                    MAX_Numbers(intArr);
+
+                MAX_Numbers(intArr);
                 break;
 
             case 6: // Most repeated value
@@ -85,7 +86,7 @@ public class Main {
                 break;
 
             case 14: // Return only primes
-            	returnOnlyPrime(intArr);
+                returnOnlyPrime(intArr);
                 break;
 
             case 15: // Find Largest Prime
@@ -101,11 +102,22 @@ public class Main {
                 break;
 
             case 18: //execute all
-            	CheckPalindrome(stringArr);
-            	returnOnlyPrime(intArr);
+                CheckPalindrome(stringArr);
+                returnOnlyPrime(intArr);
                 break;
         }
 
+    }
+
+	/*20160065*/
+    public static boolean Check_Sorted(ArrayList<Integer> Arr,int siz){
+
+        for(int i=0;i<siz-1;i++)
+        {
+            if(Arr.get(i)> Arr.get(i + 1)) return false;
+
+        }
+        return true;
     }
 
     private static void printMenu() {
@@ -132,27 +144,27 @@ public class Main {
     }
 
 
-  
-    public static void CheckPalindrome(String arr[])  
-    {  
+
+    public static void CheckPalindrome(String arr[])
+    {
 
         String[] reverse = new String[arr.length];
-        
+
         for(int i = 0; i < arr.length; i++)
         {
-	        reverse[i] = arr[arr.length - i - 1];
+            reverse[i] = arr[arr.length - i - 1];
         }
-	    Boolean isPal = Arrays.toString(arr).equals(Arrays.toString(reverse));
-	    	
-	    if (isPal)  
-	        System.out.println("Entered string is a palindrome.");  
-	    else  
-	        System.out.println("Entered string isn't a palindrome.");   
-    }  
-    
+        Boolean isPal = Arrays.toString(arr).equals(Arrays.toString(reverse));
+
+        if (isPal)
+            System.out.println("Entered string is a palindrome.");
+        else
+            System.out.println("Entered string isn't a palindrome.");
+    }
+
     public static void MAX_Numbers(ArrayList<Integer> my_array)
     {
-        
+
         Collections.sort(my_array);
         System.out.println("The three Maximam numbers in the Array :");
         for(int j=((my_array.size())-1) ; j>(my_array.size()-4) ; j--)
@@ -161,50 +173,46 @@ public class Main {
         }
         System.out.println("");
     }
-    
-    
-    
+
+
+
     /**
-	 * 20160115
-	 * @param n the number to check if it's prime or not
-	 * @return true if the nummber is prime
-	 */
-	public static Boolean isPrime(int n)
-	{
-		if(n%2 == 0)
+     * 20160115
+     * @param n the number to check if it's prime or not
+     * @return true if the nummber is prime
+     */
+    public static Boolean isPrime(int n)
+    {
+        if(n%2 == 0)
         {
             return false;
         }
         for(int i = 3; i <= Math.floor(Math.sqrt(n)); i+=2)
         {
-          if(n % i == 0)
-          {
-              return false;
-          }
+            if(n % i == 0)
+            {
+                return false;
+            }
         }
         return true;
-	}
-	
-	
-	/**
-	 * 20160115
-	 * @param orig the original array
-	 * @return another contains only the prime numbers in the original array
-	 */
-	public static ArrayList<Integer> returnOnlyPrime(ArrayList<Integer>  orig)
-	{
-		ArrayList<Integer> arr = new ArrayList<>();
-		for(int i:orig)
-		{
-			if(isPrime(i))
-				arr.add(i);
-		}
-		System.out.println(arr);
-		return arr;
-	}
-	
-	
-	
+    }
 
+
+    /**
+     * 20160115
+     * @param orig the original array
+     * @return another contains only the prime numbers in the original array
+     */
+    public static ArrayList<Integer> returnOnlyPrime(ArrayList<Integer>  orig)
+    {
+        ArrayList<Integer> arr = new ArrayList<>();
+        for(int i:orig)
+        {
+            if(isPrime(i))
+                arr.add(i);
+        }
+        System.out.println(arr);
+        return arr;
+    }
 
 }
