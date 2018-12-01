@@ -54,7 +54,7 @@ public class Main {
                 break;
 
             case 7: // Get median
-            	GetMedian(intArr);
+
                 break;
 
             case 8: // Shuffle
@@ -62,7 +62,7 @@ public class Main {
                 break;
 
             case 9: // Find smallest prime
-
+            	find_Smallest_Prime(intArr);
                 break;
 
             case 10: // Get the minimum 3 numbers
@@ -99,8 +99,8 @@ public class Main {
 
             case 18: //execute all
             	CheckPalindrome(stringArr);
-            	GetMedian(intArr);
             	returnOnlyPrime(intArr);
+            	find_Smallest_Prime(intArr);
                 break;
         }
 
@@ -190,22 +190,39 @@ public class Main {
 		System.out.println(arr);
 		return arr;
 	}
-	static void GetMedian(ArrayList<Integer> arr)
-	{//Ahmed Bassem 20160008
-		Collections.sort(arr);
-		int size=arr.size()-1;
-		int median=0;
-		if(arr.size()%2!=0)
-		{
-			median=arr.get(size/2);
-		}
-		else
-		{
-			int m1=arr.get((size/2)+1);
-			int m2=arr.get(size/2);
-			median=(m1+m2)/2;
-		}
-		System.out.println("Median = " + median);
-	}	
+	/**
+	 * 20160242
+	 * @param intArr2 the original array
+	 * @return the smallest Prime number in the orignal array
+	 */
 	
+	 public static int find_Smallest_Prime(ArrayList<Integer> intArr2)
+	    {
+	        int smallest_value=99999;
+	        boolean cheak,thereis=false; 
+	        for(int i=0;i<intArr2.size();i++)
+	        {
+	            
+	            if(isPrime(intArr2.get(i))&&smallest_value>intArr2.get(i))
+	            {
+	                smallest_value=intArr2.get(i);
+	                thereis=true;
+	            } 
+	        }
+	        if(thereis)
+	        {
+	        	System.out.println(smallest_value);
+	            return smallest_value;
+	        }
+	            else
+	            {
+	            	System.out.println("There is no Prime numbers in this array");
+	                return -1;
+	            }
+	    }
+	
+	
+	
+
+
 }
