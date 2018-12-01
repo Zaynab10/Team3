@@ -54,7 +54,7 @@ public class Main {
                 break;
 
             case 7: // Get median
-
+            	GetMedian(intArr);
                 break;
 
             case 8: // Shuffle
@@ -99,6 +99,7 @@ public class Main {
 
             case 18: //execute all
             	CheckPalindrome(stringArr);
+            	GetMedian(intArr);
             	returnOnlyPrime(intArr);
                 break;
         }
@@ -189,9 +190,22 @@ public class Main {
 		System.out.println(arr);
 		return arr;
 	}
+	static void GetMedian(ArrayList<Integer> arr)
+	{//Ahmed Bassem 20160008
+		Collections.sort(arr);
+		int size=arr.size()-1;
+		int median=0;
+		if(arr.size()%2!=0)
+		{
+			median=arr.get(size/2);
+		}
+		else
+		{
+			int m1=arr.get((size/2)+1);
+			int m2=arr.get(size/2);
+			median=(m1+m2)/2;
+		}
+		System.out.println("Median = " + median);
+	}	
 	
-	
-	
-
-
 }
