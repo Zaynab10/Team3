@@ -54,7 +54,7 @@ public class Main {
                 break;
 
             case 7: // Get median
-
+            	GetMedian(intArr);
                 break;
 
             case 8: // Shuffle
@@ -99,6 +99,7 @@ public class Main {
 
             case 18: //execute all
             	CheckPalindrome(stringArr);
+            	GetMedian(intArr);
             	returnOnlyPrime(intArr);
             	find_Smallest_Prime(intArr);
                 break;
@@ -172,7 +173,23 @@ public class Main {
         }
         return true;
 	}
-	
+	public static void GetMedian(ArrayList<Integer> arr)
+	{//20160008 Ahmed Bassem
+		Collections.sort(arr);
+		int size=arr.size()-1;
+		int median=0;
+		if(arr.size()%2!=0)
+		{
+			median=arr.get(size/2);
+		}
+		else
+		{
+			int m1=arr.get((size/2)+1);
+			int m2=arr.get(size/2);
+			median=(m1+m2)/2;
+		}
+		System.out.println("Median = " + median);
+	}
 	
 	/**
 	 * 20160115
