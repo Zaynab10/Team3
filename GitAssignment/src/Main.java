@@ -74,7 +74,7 @@ public class Main {
                 break;
 
             case 11: // Distnict Array
-
+		DisntinctArray(intArr);
                 break;
 
             case 12: // Zero if less than zero
@@ -107,6 +107,7 @@ public class Main {
             	returnOnlyPrime(intArr);
             	find_Smallest_Prime(intArr);
                 most_Repeated_Value(convertIntegers(intArr));
+		DisntinctArray(intArr);
                 break;
         }
 
@@ -290,6 +291,23 @@ public class Main {
         return ret;
     }
 	
+	public static void DisntinctArray(ArrayList<Integer> array) {
+		ArrayList<Integer> arr = new ArrayList<Integer>();
+		for(int i = 0; i < array.size(); i++) {
+			boolean isUnique = false;
+			for(int j = 0; j < i; j++) {
+				if(array.get(i) == array.get(j)) {
+					isUnique = true;
+					break;
+				}
+			}
+			if(!isUnique) {
+				arr.add(array.get(i));
+			}
+		}
+		for(int i = 0; i < arr.size(); i++) 
+    		System.out.println(arr.get(i));
+	}
 
 
 }
