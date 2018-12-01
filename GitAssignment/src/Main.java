@@ -95,7 +95,7 @@ public class Main {
                 break;
 
             case 16: // Shift Array
-                ShiftArray(intArr);
+                System.out.println("The shifted array :\n" + ShiftArray(intArr));
                 break;
 
             case 17: // Get Average
@@ -360,7 +360,6 @@ public class Main {
             tmpArr.add(i - 1, arr.get(i));
         }
         tmpArr.add(arrSize - 1, tmpInt);
-	System.out.println(tmpArr);
         return tmpArr;
     }
 
