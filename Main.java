@@ -1,5 +1,7 @@
-package com.company;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class Main {
 
@@ -42,7 +44,6 @@ public class Main {
                 boolean b= Check_Sorted(intArr,siz);
                 if(b) System.out.println("Array is sorted.");
                 else System.out.println("Array is not sorted.");
-
                 break;
 
             case 5: // Get the maximum 3 numbers
@@ -52,6 +53,7 @@ public class Main {
 
             case 6: // Most repeated value
                 most_Repeated_Value(convertIntegers(intArr));
+
                 break;
 
             case 7: // Get median
@@ -101,13 +103,13 @@ public class Main {
             case 18: //execute all
                 CheckPalindrome(stringArr);
                 returnOnlyPrime(intArr);
+
                 most_Repeated_Value(convertIntegers(intArr));
                 break;
         }
 
     }
-
-    /*20160065*/
+	/*20160065*/
     public static boolean Check_Sorted(ArrayList<Integer> Arr,int siz){
 
         for(int i=0;i<siz-1;i++)
@@ -212,6 +214,7 @@ public class Main {
         System.out.println(arr);
         return arr;
     }
+
     public static void most_Repeated_Value(int arr[])
     {
         // Name : Islam Ibrahim Amin
@@ -248,3 +251,4 @@ public class Main {
     }
 
 }
+
