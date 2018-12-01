@@ -32,7 +32,7 @@ public class Main {
         sc.close();
         switch (choice){
             case 1: // Reverse Array
-
+		reverse(intArr);
             	break;
 
             case 2: // Check palindrome
@@ -103,6 +103,7 @@ public class Main {
                 break;
 
             case 18: //execute all
+			reverse(intArr);
             	CheckPalindrome(stringArr);
             	GetMedian(intArr);
             	System.out.println("prime array : " + returnOnlyPrime(intArr));
@@ -332,6 +333,14 @@ public class Main {
 		}
 		
 	}
+
+	static void reverse (ArrayList <Integer> arr){
+        Collections.reverse(arr);
+        for(int i = 0 ; i < arr.size() ; i++ ){
+            System.out.print(arr.get(i));
+            }
+    }
+	
 
     /***
      * @ID 20160047
