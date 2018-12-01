@@ -32,8 +32,8 @@ public class Main {
         sc.close();
         switch (choice){
             case 1: // Reverse Array
-	reverse(arr);
-                break;
+
+            	break;
 
             case 2: // Check palindrome
             	CheckPalindrome(stringArr);
@@ -71,11 +71,11 @@ public class Main {
                 break;
 
             case 10: // Get the minimum 3 numbers
-		Get_Min_3(stringArr);
+            	Get_Min_3(stringArr);
                 break;
 
             case 11: // Distnict Array
-		DisntinctArray(intArr);
+            	DisntinctArray(intArr);
                 break;
 
             case 12: // Zero if less than zero
@@ -87,7 +87,7 @@ public class Main {
                 break;
 
             case 14: // Return only primes
-            	returnOnlyPrime(intArr);
+            	System.out.println("prime array : " + returnOnlyPrime(intArr));
                 break;
 
             case 15: // Find Largest Prime
@@ -103,14 +103,13 @@ public class Main {
                 break;
 
             case 18: //execute all
-		reverse(arr);
             	CheckPalindrome(stringArr);
             	GetMedian(intArr);
-            	returnOnlyPrime(intArr);
+            	System.out.println("prime array : " + returnOnlyPrime(intArr));
             	find_Smallest_Prime(intArr);
                 most_Repeated_Value(convertIntegers(intArr));
-		DisntinctArray(intArr);
-		Get_Min_3(stringArr);
+				DisntinctArray(intArr);
+				Get_Min_3(stringArr);
                 break;
         }
 
@@ -225,7 +224,6 @@ public class Main {
 			if(isPrime(i))
 				arr.add(i);
 		}
-		System.out.println(arr);
 		return arr;
 	}
 	/**
@@ -334,13 +332,7 @@ public class Main {
 		}
 		
 	}
-	static void reverse (int []arr){
-        ArrayList arr2 = new ArrayList<>();
-        for(int i = 0 ; i < arr.length ; i++ )
-            arr2.add(arr[i]);
-        for(int i = 1 ; i <= arr.length ; i++ )
-            arr[i-1] = (int) arr2.get(arr.length-i);
-    }
+	
 
 
 
