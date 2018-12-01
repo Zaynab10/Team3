@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -43,15 +44,17 @@ public class Main {
                 break;
 
             case 4: // Check Sorted
-
-                break;
+			      Check_Sorted(intArr,siz);
+                
+                
+				break;
 
             case 5: // Get the maximum 3 numbers
 
                 break;
 
             case 6: // Most repeated value
-
+                most_Repeated_Value(convertIntegers(intArr));
                 break;
 
             case 7: // Get median
@@ -103,8 +106,11 @@ public class Main {
             	GetMedian(intArr);
             	returnOnlyPrime(intArr);
             	find_Smallest_Prime(intArr);
-				Check_Sorted(intArr,siz);
+				      Check_Sorted(intArr,siz);
               
+
+                most_Repeated_Value(convertIntegers(intArr));
+
                 break;
         }
 
@@ -132,8 +138,20 @@ public class Main {
         System.out.println("18-\tExecute All");
 
     }
+	
+	/***************/
+		/*20160065*/
+    public static boolean Check_Sorted(ArrayList<Integer> Arr,int siz){
 
+        for(int i=0;i<siz-1;i++)
+        {
+            if(Arr.get(i)> Arr.get(i + 1)) return false;
 
+        }
+        return true;
+    }
+	
+  /**************/
   
     public static void CheckPalindrome(String arr[])  
     {  
@@ -240,6 +258,7 @@ public class Main {
 	                return -1;
 	            }
 	    }
+
 	
 	
 		/*20160065*/
@@ -247,10 +266,47 @@ public class Main {
 
         for(int i=0;i<siz-1;i++)
         {
-		if(Arr.get(i)> Arr.get(i + 1)) {System.out.println("Array is not sorted."); return false;}
-        }
+		if(Arr.get(i)> Arr.get(i + 1)) {System.out.println("Array is not sorted."); return false;}//if
+        }//for
 		System.out.println("Array is sorted.");
         return true;
+}
+
+
+    public static void most_Repeated_Value(int arr[])
+    {
+        // Name : Islam Ibrahim Amin
+        // ID   : 20160320
+
+        Arrays.sort(arr);
+        int n = arr.length;
+        int max_count = 1, result = arr[0];
+        int current_count = 1;
+
+        for (int i = 1; i < n; i++)
+        {
+            if (arr[i] == arr[i - 1])
+                current_count++;
+            else {
+                if (current_count > max_count) {
+                    max_count = current_count;
+                    result = arr[i - 1];
+                }
+                current_count = 1;
+            }
+        }
+        System.out.printf("most repeated Value is : %d\n", result);
+        // System.out.printf("Repeated times is : %d\n",max_count);
+    }
+    public static int[] convertIntegers( ArrayList<Integer> integers)
+    {
+        int[] ret = new int[integers.size()];
+        for (int i=0; i < ret.length; i++)
+        {
+            ret[i] = integers.get(i).intValue();
+        }
+        return ret;
+
     }
 	
 
