@@ -50,11 +50,11 @@ public class Main {
                 break;
 
             case 6: // Most repeated value
-
+                most_Repeated_Value(convertIntegers(intArr));
                 break;
 
             case 7: // Get median
-
+            	GetMedian(intArr);
                 break;
 
             case 8: // Shuffle
@@ -99,8 +99,10 @@ public class Main {
 
             case 18: //execute all
             	CheckPalindrome(stringArr);
+            	GetMedian(intArr);
             	returnOnlyPrime(intArr);
             	find_Smallest_Prime(intArr);
+                most_Repeated_Value(convertIntegers(intArr));
                 break;
         }
 
@@ -172,7 +174,23 @@ public class Main {
         }
         return true;
 	}
-	
+	public static void GetMedian(ArrayList<Integer> arr)
+	{//20160008 Ahmed Bassem
+		Collections.sort(arr);
+		int size=arr.size()-1;
+		int median=0;
+		if(arr.size()%2!=0)
+		{
+			median=arr.get(size/2);
+		}
+		else
+		{
+			int m1=arr.get((size/2)+1);
+			int m2=arr.get(size/2);
+			median=(m1+m2)/2;
+		}
+		System.out.println("Median = " + median);
+	}
 	
 	/**
 	 * 20160115
@@ -220,8 +238,41 @@ public class Main {
 	                return -1;
 	            }
 	    }
-	
-	
+
+    public static void most_Repeated_Value(int arr[])
+    {
+        // Name : Islam Ibrahim Amin
+        // ID   : 20160320
+
+        Arrays.sort(arr);
+        int n = arr.length;
+        int max_count = 1, result = arr[0];
+        int current_count = 1;
+
+        for (int i = 1; i < n; i++)
+        {
+            if (arr[i] == arr[i - 1])
+                current_count++;
+            else {
+                if (current_count > max_count) {
+                    max_count = current_count;
+                    result = arr[i - 1];
+                }
+                current_count = 1;
+            }
+        }
+        System.out.printf("most repeated Value is : %d\n", result);
+        // System.out.printf("Repeated times is : %d\n",max_count);
+    }
+    public static int[] convertIntegers( ArrayList<Integer> integers)
+    {
+        int[] ret = new int[integers.size()];
+        for (int i=0; i < ret.length; i++)
+        {
+            ret[i] = integers.get(i).intValue();
+        }
+        return ret;
+    }
 	
 
 
