@@ -43,8 +43,11 @@ public class Main {
                 break;
 
             case 4: // Check Sorted
-
-                break;
+			    boolean b= Check_Sorted(intArr,siz);
+                if(b) System.out.println("Array is sorted.");
+                else System.out.println("Array is not sorted.");
+                
+				break;
 
             case 5: // Get the maximum 3 numbers
 
@@ -131,8 +134,20 @@ public class Main {
         System.out.println("18-\tExecute All");
 
     }
+	
+	/***************/
+		/*20160065*/
+    public static boolean Check_Sorted(ArrayList<Integer> Arr,int siz){
 
+        for(int i=0;i<siz-1;i++)
+        {
+            if(Arr.get(i)> Arr.get(i + 1)) return false;
 
+        }
+        return true;
+    }
+	
+  /**************/
   
     public static void CheckPalindrome(String arr[])  
     {  
