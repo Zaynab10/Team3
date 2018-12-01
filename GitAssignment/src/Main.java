@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
+import java.lang.*;
 
 public class Main {
 
@@ -70,7 +71,7 @@ public class Main {
                 break;
 
             case 10: // Get the minimum 3 numbers
-
+		Get_Min_3(stringArr)
                 break;
 
             case 11: // Distnict Array
@@ -308,6 +309,29 @@ public class Main {
 		for(int i = 0; i < arr.size(); i++) 
     		System.out.println(arr.get(i));
 	}
+	public  static void Get_Min_3(String  array[])
+	{	
+		///Name:Youssef Ahmed Ali
+		//ID:20160292
+		///Supposed to call the Sort function
+		String minarray[];
+		minarray=new String[Math.min(3,array.length)];
+		////Sort
+		Arrays.sort(array);
+		////////////
+		///Get the minimum 3
+		
+		for(int i=0;i<3 && i<array.length;i++)
+		{
+			minarray[i]=array[i];
+		}
+		for(int i=0;i<array.length;i++)
+		{
+			System.out.println(array[i]);
+		}
+		
+	}
+
 
 
 }
