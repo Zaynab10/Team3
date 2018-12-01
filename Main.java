@@ -101,6 +101,7 @@ public class Main {
             case 18: //execute all
                 CheckPalindrome(stringArr);
                 returnOnlyPrime(intArr);
+                most_Repeated_Value(convertIntegers(intArr));
                 break;
         }
 
