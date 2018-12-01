@@ -81,7 +81,7 @@ public class Main {
                 break;
 
             case 12: // Zero if less than zero
-
+		Replace_by_Zero(intArr);
                 break;
 
             case 13: // Count primes
@@ -109,6 +109,7 @@ public class Main {
 			System.out.println(intArr);
             	CheckPalindrome(stringArr);
             	GetMedian(intArr);
+		Replace_by_Zero(intArr);
             	System.out.println("prime array : " + returnOnlyPrime(intArr));
             	find_Smallest_Prime(intArr);
                 most_Repeated_Value(convertIntegers(intArr));
@@ -344,7 +345,26 @@ public class Main {
             arr.set(i-1, (int) arr2.get(arr.size()-i));
     }
 	
-
-
+	public static void Replace_by_Zero(ArrayList<Integer> objArray)
+    {
+        System.out.println("Array after removing negative element");
+      for(int i=0;i<objArray.size();i++)
+      {
+          if(objArray.get(i)<0)
+          {
+              objArray.set(i, 0);
+          }
+      }
+    System.out.println(objArray);
+        
+    }
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
