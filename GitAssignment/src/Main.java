@@ -71,7 +71,7 @@ public class Main {
                 break;
 
             case 10: // Get the minimum 3 numbers
-		Get_Min_3(stringArr)
+		Get_Min_3(stringArr);
                 break;
 
             case 11: // Distnict Array
@@ -109,6 +109,7 @@ public class Main {
             	find_Smallest_Prime(intArr);
                 most_Repeated_Value(convertIntegers(intArr));
 		DisntinctArray(intArr);
+		Get_Min_3(stringArr);
                 break;
         }
 
@@ -325,6 +326,7 @@ public class Main {
 		{
 			minarray[i]=array[i];
 		}
+		System.out.println("The Smallest 3 values are : ");
 		for(int i=0;i<array.length;i++)
 		{
 			System.out.println(array[i]);
